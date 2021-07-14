@@ -1,0 +1,40 @@
+.md-toolbar {
+   justify-content: space-between;
+   flex-flow: initial !important;
+}
+.md-title {
+   margin: 0px 20px 0px 10px !important;
+   color: white !important;
+   font-weight: 500 !important;
+   // margin-left: 20px !important;
+}
+.index-content {
+   padding: 16px;
+}
+.topbar {
+   width: 100%;
+   display: flex !important;
+   align-items: center !important;
+   justify-content: space-between;
+   &__settings {
+      display: flex;
+   }
+   &__click {
+      cursor: pointer;
+      align-items: center;
+      display: flex;
+   }
+}
+.toopbar {
+   &__title {
+   }
+}
+
+.md-icon {
+   svg {
+      height: 20px;
+   }
+}
+
+// .svg-close {
+// }

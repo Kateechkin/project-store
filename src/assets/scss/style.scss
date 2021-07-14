@@ -1,0 +1,265 @@
+@import "./views/Home.scss";
+@import "./views/Login.scss";
+@import "./views/Errors.scss";
+@import "./components/checkbox.scss";
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow: scroll !important;
+}
+
+.app-flex {
+  flex: 1 1 auto;
+}
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+.home {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+.title-h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+.container-login {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 800px;
+}
+.main-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0px 20px;
+  position: relative;
+}
+a {
+  text-decoration: none;
+  color: #424242;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+.breadcrumbs {
+  text-align: left;
+  a {
+    margin: 0px 0px 0px 21px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    color: #e4e4e4;
+    position: relative;
+    &::before {
+      content: " ";
+      position: absolute;
+      bottom: 5px;
+      left: -19px;
+      width: 10px;
+      height: 10px;
+      border-top: 1px solid #e1e1e1;
+      border-right: 1px solid #e1e1e1;
+      transform: rotate(-135deg);
+    }
+  }
+}
+button:active,
+button:focus {
+  outline: none;
+}
+input:active,
+input:focus {
+  outline: none;
+}
+
+.md-comment {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.md-menu-content-container {
+  overflow: initial !important;
+}
+.md-menu-content.md-select-menu {
+  z-index: 12;
+  transform-origin: 0px 96px;
+  position: absolute;
+  top: 150px !important;
+  left: initial !important;
+  right: 20px !important;
+}
+.md-menu-content.md-select-menu .md-list {
+  transition: opacity 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  width: 660px;
+  max-height: 75vh;
+  overflow: auto;
+  background: #e1e1e1 !important;
+}
+.md-menu-content {
+  max-height: initial !important;
+  max-width: 660px !important;
+}
+.md-subheader {
+  cursor: pointer;
+  font-size: 16px !important;
+}
+.first-block {
+  display: flex;
+  align-items: center;
+}
+.field-select {
+  width: 50% !important;
+  max-height: 39px;
+}
+.second-block {
+  display: flex;
+  justify-content: flex-end;
+}
+.button-order {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px 10px 0px 0px;
+}
+.md-app-content .md-card {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  overflow: hidden !important;
+  margin: 20px 0px 20px 0px;
+}
+
+.md-app-container {
+  overflow: initial !important;
+}
+.md-field {
+  margin: 4px 0 4px !important;
+}
+
+.table-item-edit {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__check {
+    margin: 0px 0px 0px 20px;
+  }
+  svg {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+}
+.form-table-edit {
+  display: flex;
+  width: 100%;
+}
+
+//лоадер
+$color: #49b8e5, #1e98d4, #2a92d0, #3a88c8, #507cbe;
+body {
+  overflow: hidden;
+}
+
+.container-loader {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0px 0px 0px;
+}
+
+$circle-size: 20px;
+$circle-margin: 7px;
+
+.circle {
+  width: $circle-size;
+  height: $circle-size;
+  border-radius: 50%;
+  margin: $circle-margin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:before {
+    content: "";
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+  }
+}
+
+@for $i from 1 through 5 {
+  .circle-#{$i} {
+    background-color: nth($color, $i);
+    &:before {
+      background-color: nth($color, $i);
+      animation-delay: 200ms * $i;
+    }
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50%,
+  75% {
+    transform: scale(2.5);
+  }
+  78%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .md-comment {
+    width: initial !important;
+  }
+  .container-loader {
+    margin: 0px 0px 0px 0px;
+  }
+}
